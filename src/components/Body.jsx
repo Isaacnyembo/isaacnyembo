@@ -145,7 +145,7 @@ function Body() {
         >
           <div className='relative group animate-float'>
             <img 
-              src="/src/assets/image.png" 
+              src="/image.png" 
               alt="Isaac Nyembo - Développeur web et mobile" 
               className='w-48 h-56 sm:w-64 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover 
                        shadow-2xl transform group-hover:scale-105 transition-all duration-500 hover-lift
