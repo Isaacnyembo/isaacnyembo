@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-100: #3c3604;
+  --color-primary-200: #796c08;
+  --color-primary-300: #b5a10c;
+  --color-primary-400: #f0d611;
+  --color-primary-500: #f4e04d;
+  --color-primary-600: #f6e671;
+  --color-primary-700: #f8ed95;
+  --color-primary-800: #faf3b8;
+  --color-primary-900: #fdf9dc;
+  --color-primary: #f4e04d;
+
+  --color-light-100: #65004c;
+  --color-light-200: #ca0097;
+  --color-light-300: #ff30cb;
+  --color-light-400: #ff95e4;
+  --color-light-500: #fffbfe;
+  --color-light-600: #fffbfe;
+  --color-light-700: #fffcfe;
+  --color-light-800: #fffdfe;
+  --color-light-900: #fffeff;
+  --color-light: #fffbfe;
+
+  --color-dark-100: #000303;
+  --color-dark-200: #000606;
+  --color-dark-300: #000909;
+  --color-dark-400: #000b0c;
+  --color-dark-500: #001011;
+  --color-dark-600: #006b72;
+  --color-dark-700: #00c7d5;
+  --color-dark-800: #39f2ff;
+  --color-dark-900: #9cf8ff;
+  --color-dark: #001011;
+
+  --color-purple-100: #220e20;
+  --color-purple-200: #441c40;
+  --color-purple-300: #652a60;
+  --color-purple-400: #873981;
+  --color-purple-500: #a846a0;
+  --color-purple-600: #bf67b8;
+  --color-purple-700: #cf8dca;
+  --color-purple-800: #dfb3db;
+  --color-purple-900: #efd9ed;
+  --color-purple: #a846a0;
+
+  --color-secondary-100: #171917;
+  --color-secondary-200: #2e322e;
+  --color-secondary-300: #454c44;
+  --color-secondary-400: #5c655b;
+  --color-secondary-500: #727d71;
+  --color-secondary-600: #8e988d;
+  --color-secondary-700: #abb2aa;
+  --color-secondary-800: #c7ccc6;
+  --color-secondary-900: #e3e5e3;
+  --color-secondary: #727d71;
+}
+
+/* Animations personnalisées */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(244, 224, 77, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(244, 224, 77, 0.6);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Classes d'animation */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* États d'animation */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Classes pour les animations au scroll */
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effets de particules */
+.particle-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(244, 224, 77, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 20%, rgba(244, 224, 77, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(244, 224, 77, 0.1) 1px, transparent 1px);
+  background-size: 300px 300px, 200px 200px, 250px 250px;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Hover effects améliorés */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrolling pour toute la page */
+html {
+  scroll-behavior: smooth;
+}
